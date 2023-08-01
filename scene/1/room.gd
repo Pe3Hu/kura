@@ -5,6 +5,7 @@ var ring = null
 var maze = null
 var backdoor = false
 var order = null
+var doors = {}
 
 
 func _ready() -> void:
@@ -29,8 +30,9 @@ func update_color_based_on_ring() -> void:
 		var s = 0.75
 		var v = 1
 		var h = 0
+		var odd = ring % 6
 		
-		match ring:
+		match odd:
 			0:
 				h = 0 / max_h
 			1:
@@ -46,3 +48,7 @@ func update_color_based_on_ring() -> void:
 		
 		var color_ = Color.from_hsv(h, s, v)
 		set_color(color_)
+
+
+func paint_white() -> void:
+	set_color(Color.WHITE)

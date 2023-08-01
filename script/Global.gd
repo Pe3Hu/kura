@@ -23,17 +23,18 @@ func _ready() -> void:
 
 
 func init_arr() -> void:
-	arr.edge = [1, 2, 3, 4, 5, 6]
+	pass
 
 
 func init_num() -> void:
 	num.index = {}
 	
 	num.ring = {}
-	num.ring.r = 48
+	num.ring.r = 32
+	num.ring.segment = 9
 	
 	num.room = {}
-	num.room.r = 16
+	num.room.r = 12
 
 
 func init_dict() -> void:
@@ -80,6 +81,14 @@ func init_dict() -> void:
 			Vector2( 0,-1)
 		]
 	]
+	
+	dict.ring = {}
+	dict.ring.weight = {}
+	dict.ring.weight["single"] = 7
+	dict.ring.weight["trapeze"] = 5
+	dict.ring.weight["equal"] = 9
+	dict.ring.weight["double"] = 3
+	#dict.ring.weight["triple"] = 1
 
 
 func init_node() -> void:
@@ -89,6 +98,7 @@ func init_node() -> void:
 func init_scene() -> void:
 	scene.maze = load("res://scene/0/maze.tscn")
 	scene.room = load("res://scene/1/room.tscn")
+	scene.door = load("res://scene/1/door.tscn")
 	
 
 
@@ -120,3 +130,29 @@ func load_data(path_: String):
 	var json_object = JSON.new()
 	var parse_err = json_object.parse(text)
 	return json_object.get_data()
+
+
+
+func get_random_key(dict_: Dictionary):
+	if dict_.keys().size() == 0:
+		print("!bug! empty array in get_random_key func")
+		return null
+	
+	var total = 0
+	
+	for key in dict_.keys():
+		total += dict_[key]
+	
+	rng.randomize()
+	var index_r = rng.randf_range(0, 1)
+	var index = 0
+	
+	for key in dict_.keys():
+		var weight = float(dict_[key])
+		index += weight/total
+		
+		if index > index_r:
+			return key
+	
+	print("!bug! index_r error in get_random_key func")
+	return null

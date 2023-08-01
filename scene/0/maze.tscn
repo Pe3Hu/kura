@@ -19,4 +19,6 @@ script = ExtResource("1_i0st8")
 layout_mode = 2
 color = Color(0.709804, 1, 0.937255, 1)
 
+[node name="Doors" type="Node2D" parent="."]
+
 [node name="Rooms" type="Node2D" parent="."]
