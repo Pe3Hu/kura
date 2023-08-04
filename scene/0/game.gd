@@ -4,8 +4,10 @@ extends Node
 func _ready() -> void:
 	#datas.sort_custom(func(a, b): return a.value < b.value)
 	#012 description
-	Global.node.maze = Global.scene.maze.instantiate()
-	Global.node.game.get_node("Layer0").add_child(Global.node.maze)
+	#Global.node.maze = Global.scene.maze.instantiate()
+	#Global.node.game.get_node("Layer0").add_child(Global.node.maze)
+	Global.node.arena = Global.scene.arena.instantiate()
+	Global.node.game.get_node("Layer0").add_child(Global.node.arena)
 	pass
 
 

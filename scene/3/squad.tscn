@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg8t5xe08o6i7"]
+
+[ext_resource type="Script" path="res://scene/3/squad.gd" id="1_t32ih"]
+
+[node name="Squad" type="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t32ih")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 2

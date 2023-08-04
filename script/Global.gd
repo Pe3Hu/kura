@@ -23,7 +23,7 @@ func _ready() -> void:
 
 
 func init_arr() -> void:
-	pass
+	arr.aspect = ["power", "autonomy", "velocity"]
 
 
 func init_num() -> void:
@@ -96,9 +96,18 @@ func init_node() -> void:
 
 
 func init_scene() -> void:
-	scene.maze = load("res://scene/0/maze.tscn")
+	scene.maze = load("res://scene/1/maze.tscn")
 	scene.room = load("res://scene/1/room.tscn")
 	scene.door = load("res://scene/1/door.tscn")
+	scene.arena = load("res://scene/2/arena.tscn")
+	scene.altar = load("res://scene/2/altar.tscn")
+	scene.pillar = load("res://scene/2/pillar.tscn")
+	scene.path = load("res://scene/2/path.tscn")
+	scene.squad = load("res://scene/3/squad.tscn")
+	scene.servant = load("res://scene/3/servant.tscn")
+	scene.library = load("res://scene/4/library.tscn")
+	scene.card = load("res://scene/4/card.tscn")
+	scene.aspect = load("res://scene/4/aspect.tscn")
 	
 
 

@@ -1,11 +1,11 @@
-Node2D
-Line2D
-ColorRect
-MarginContainer
-Polygon2D
-HBoxContainer
 VBoxContainer
 Label
+HBoxContainer
+ColorRect
+MarginContainer
+Node2D
+Line2D
+Polygon2D
 TextureProgressBar
 ProgressBar
 GridContainer

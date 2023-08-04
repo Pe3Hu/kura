@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwrtp53p4onlo"]
 
-[ext_resource type="Script" path="res://scene/0/maze.gd" id="1_i0st8"]
+[ext_resource type="Script" path="res://scene/1/maze.gd" id="1_i47v1"]
 
 [node name="Maze" type="MarginContainer"]
 custom_minimum_size = Vector2(200, 200)
@@ -13,7 +13,7 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
-script = ExtResource("1_i0st8")
+script = ExtResource("1_i47v1")
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 2

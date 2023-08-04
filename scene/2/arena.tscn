@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c63hoejt3vsdu"]
+
+[ext_resource type="Script" path="res://scene/2/arena.gd" id="1_ovgg7"]
+
+[node name="Arena" type="MarginContainer"]
+custom_minimum_size = Vector2(600, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ovgg7")
+
+[node name="BG" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+color = Color(1, 0.278431, 0.278431, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Pillars" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+alignment = 1
