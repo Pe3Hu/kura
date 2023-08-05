@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmqijx6v06o3j"]
+[gd_scene load_steps=4 format=3 uid="uid://dmqijx6v06o3j"]
 
 [ext_resource type="Script" path="res://scene/2/altar.gd" id="1_km6lc"]
 [ext_resource type="PackedScene" uid="uid://ddg7bwpf5dhel" path="res://scene/4/library.tscn" id="2_3i8mr"]
+[ext_resource type="PackedScene" uid="uid://bpjgfsypd6eh" path="res://scene/3/forge.tscn" id="3_o86nl"]
 
 [node name="Altar" type="MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -28,4 +29,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Library" parent="VBox" instance=ExtResource("2_3i8mr")]
+layout_mode = 2
+
+[node name="Forge" parent="VBox" instance=ExtResource("3_o86nl")]
 layout_mode = 2

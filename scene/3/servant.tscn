@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b1yw3l206g5rk"]
+[gd_scene load_steps=3 format=3 uid="uid://b1yw3l206g5rk"]
+
+[ext_resource type="Script" path="res://scene/3/servant.gd" id="1_1c1en"]
+[ext_resource type="PackedScene" uid="uid://gjrm2qndq7xo" path="res://scene/4/aspects.tscn" id="1_g0fj4"]
 
 [node name="Servant" type="MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -13,6 +16,19 @@ offset_right = 25.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_1c1en")
 
 [node name="BG" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Aspects" parent="VBox/HBox" instance=ExtResource("1_g0fj4")]
 layout_mode = 2

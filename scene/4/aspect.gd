@@ -10,7 +10,7 @@ var card = null
 func update_label_color() -> void:
 	var max_h = 360.0
 	var s = 0.75
-	var v = 1
+	var v = 0.9
 	var h = 0
 	
 	match name:
@@ -26,7 +26,12 @@ func update_label_color() -> void:
 
 
 func update_label_value() -> void:
-	label.text = str(value)
+	label.text = ""
+	
+	if value < 0:
+		label.text = "-"
+	
+	label.text += str(value)
 	
 	if value != 0:
 		visible = true

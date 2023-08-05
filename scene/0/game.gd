@@ -8,6 +8,8 @@ func _ready() -> void:
 	#Global.node.game.get_node("Layer0").add_child(Global.node.maze)
 	Global.node.arena = Global.scene.arena.instantiate()
 	Global.node.game.get_node("Layer0").add_child(Global.node.arena)
+	
+	Global.node.arena.altars.front().select_cards()
 	pass
 
 

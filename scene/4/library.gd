@@ -22,20 +22,16 @@ func _ready() -> void:
 
 
 func set_basic_cards() -> void:
-	var data = {}
-	data.operator = "add"
-	data.value = 1
-	
 	for _i in 4:
 		for aspect in Global.arr.aspect:
-			data.aspect = aspect
-			add_card(data)
-
-
-func add_card(data_: Dictionary) -> void:
-	var card = Global.scene.card.instantiate()
-	reserve.add_child(card)
-	card.add_protocol(data_)
+			var card = Global.scene.card.instantiate()
+			reserve.add_child(card)
+			var protocol = Global.scene.protocol.instantiate()
+			protocol.operator = "add"
+			protocol.value = 10
+			protocol.aspect = aspect
+			card.slot = Global.dict.aspect.slot[aspect]
+			card.apply_protocol(protocol)
 
 
 func pull_cards_from_reserve() -> void:

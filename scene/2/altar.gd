@@ -3,10 +3,15 @@ extends MarginContainer
 
 @onready var bg = $BG
 @onready var library = $VBox/Library
+@onready var forge = $VBox/Forge
 
 var lord = null
 var arena = null
 
+
+func select_cards() -> void:
+	for card in library.present.get_children():
+		forge.use_card(card)
 
 func update_color_based_on_lord() -> void:
 	var max_h = 360.0

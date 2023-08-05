@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhr1o1ybprvvt"]
+[gd_scene load_steps=3 format=3 uid="uid://dhr1o1ybprvvt"]
 
 [ext_resource type="Script" path="res://scene/4/card.gd" id="1_fsyjw"]
+[ext_resource type="PackedScene" uid="uid://gjrm2qndq7xo" path="res://scene/4/aspects.tscn" id="2_bi2dy"]
 
 [node name="Card" type="MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -21,6 +22,14 @@ script = ExtResource("1_fsyjw")
 layout_mode = 2
 color = Color(0.576471, 0.576471, 0.576471, 1)
 
-[node name="Aspects" type="HBoxContainer" parent="."]
+[node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 0
 alignment = 1
+
+[node name="Aspects" parent="VBox" instance=ExtResource("2_bi2dy")]
+layout_mode = 2
+
+[node name="Protocols" type="VBoxContainer" parent="VBox"]
+visible = false
+layout_mode = 2

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://gjrm2qndq7xo"]
+
+[ext_resource type="Script" path="res://scene/4/aspects.gd" id="1_vo4q7"]
+[ext_resource type="PackedScene" uid="uid://n8lbkw2xhavn" path="res://scene/4/aspect.tscn" id="2_gnlil"]
+
+[node name="Aspects" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+script = ExtResource("1_vo4q7")
+
+[node name="power" parent="." instance=ExtResource("2_gnlil")]
+layout_mode = 2
+
+[node name="autonomy" parent="." instance=ExtResource("2_gnlil")]
+layout_mode = 2
+
+[node name="velocity" parent="." instance=ExtResource("2_gnlil")]
+layout_mode = 2

@@ -89,6 +89,18 @@ func init_dict() -> void:
 	dict.ring.weight["equal"] = 9
 	dict.ring.weight["double"] = 3
 	#dict.ring.weight["triple"] = 1
+	
+	dict.slot = {}
+	dict.slot.aspect = {}
+	dict.slot.aspect["Head"] = "power"
+	dict.slot.aspect["Torso"] = "autonomy"
+	dict.slot.aspect["Limb"] = "velocity"
+	
+	dict.aspect = {}
+	dict.aspect.slot = {}
+	dict.aspect.slot["power"] = "Head"
+	dict.aspect.slot["autonomy"] = "Torso"
+	dict.aspect.slot["velocity"] = "Limb"
 
 
 func init_node() -> void:
@@ -103,10 +115,14 @@ func init_scene() -> void:
 	scene.altar = load("res://scene/2/altar.tscn")
 	scene.pillar = load("res://scene/2/pillar.tscn")
 	scene.path = load("res://scene/2/path.tscn")
+	scene.forge = load("res://scene/3/forge.tscn")
 	scene.squad = load("res://scene/3/squad.tscn")
 	scene.servant = load("res://scene/3/servant.tscn")
+	scene.slot = load("res://scene/3/slot.tscn")
 	scene.library = load("res://scene/4/library.tscn")
 	scene.card = load("res://scene/4/card.tscn")
+	scene.protocol = load("res://scene/4/protocol.tscn")
+	scene.aspects = load("res://scene/4/aspects.tscn")
 	scene.aspect = load("res://scene/4/aspect.tscn")
 	
 
