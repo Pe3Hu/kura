@@ -29,8 +29,7 @@ func apply_protocol(protocol_: MarginContainer) -> void:
 			value *= 1
 	
 	var aspect = prototype.aspects.get_node(protocol_.aspect)
-	aspect.value += value
-	aspect.update_label_value()
+	aspect.add_value(value)
 
 
 func remove_default() -> void:
@@ -40,6 +39,5 @@ func remove_default() -> void:
 		if protocol.default:
 			protocols.remove_child(protocol)
 			protocol.queue_free()
-			
 			var aspect = prototype.aspects.get_node(protocol.aspect)
-			aspect.value = 0
+			aspect.reset()

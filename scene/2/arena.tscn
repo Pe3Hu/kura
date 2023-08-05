@@ -22,10 +22,16 @@ visible = false
 layout_mode = 2
 color = Color(1, 0.278431, 0.278431, 1)
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="HBox" type="HBoxContainer" parent="."]
 layout_mode = 2
 alignment = 1
 
-[node name="Pillars" type="HBoxContainer" parent="VBox"]
+[node name="Pillars" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
 alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_at_end_of_round"]

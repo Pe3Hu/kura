@@ -13,6 +13,8 @@ func _ready() -> void:
 
 
 func set_default_slots() -> void:
+	prototype.reset()
+	
 	for slot in slots.get_children():
 		slot.set_default()
 
@@ -24,3 +26,4 @@ func use_card(card_: MarginContainer) -> void:
 	for protocol in card_.protocols.get_children():
 		var copy = protocol.get_copy()
 		slot.apply_protocol(copy)
+

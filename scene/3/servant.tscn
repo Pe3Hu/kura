@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://gjrm2qndq7xo" path="res://scene/4/aspects.tscn" id="1_g0fj4"]
 
 [node name="Servant" type="MarginContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,9 +26,11 @@ color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 2
+alignment = 1
 
 [node name="HBox" type="HBoxContainer" parent="VBox"]
 layout_mode = 2
+alignment = 1
 
 [node name="Aspects" parent="VBox/HBox" instance=ExtResource("1_g0fj4")]
 layout_mode = 2

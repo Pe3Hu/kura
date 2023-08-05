@@ -9,7 +9,9 @@ func _ready() -> void:
 	Global.node.arena = Global.scene.arena.instantiate()
 	Global.node.game.get_node("Layer0").add_child(Global.node.arena)
 	
-	Global.node.arena.altars.front().select_cards()
+	for altar in Global.node.arena.altars:
+		altar.select_cards()
+		altar.create_servant()
 	pass
 
 

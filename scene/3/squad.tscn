@@ -19,3 +19,7 @@ script = ExtResource("1_t32ih")
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 2
+
+[node name="Servants" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1

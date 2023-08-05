@@ -16,10 +16,10 @@ script = ExtResource("1_n6tbp")
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="HBox" type="HBoxContainer" parent="."]
 layout_mode = 2
 alignment = 1
 
-[node name="Squads" type="VBoxContainer" parent="VBox"]
+[node name="Squads" type="HBoxContainer" parent="HBox"]
 layout_mode = 2
 alignment = 1

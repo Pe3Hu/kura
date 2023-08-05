@@ -3,7 +3,6 @@ extends MarginContainer
 
 @onready var label = $Label
 
-var value = 0
 var card = null
 
 
@@ -25,7 +24,8 @@ func update_label_color() -> void:
 	label.set("theme_override_colors/font_color", color_)
 
 
-func update_label_value() -> void:
+func add_value(value_: int) -> void:
+	var value = int(label.text) + value_
 	label.text = ""
 	
 	if value < 0:
@@ -39,3 +39,5 @@ func update_label_value() -> void:
 		visible = false
 
 
+func reset() -> void:
+	label.text = "0"

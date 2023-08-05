@@ -5,7 +5,7 @@
 
 [node name="Aspect" type="MarginContainer"]
 visible = false
-custom_minimum_size = Vector2(24, 24)
+custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

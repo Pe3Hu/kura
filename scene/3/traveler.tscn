@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://14m7eajv5lb8"]
+
+[ext_resource type="Script" path="res://scene/3/traveler.gd" id="1_u6kex"]
+[ext_resource type="FontFile" uid="uid://beh7inkt4rf38" path="res://asset/font/rimouski sb.otf" id="2_r2x4m"]
+
+[node name="Traveler" type="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u6kex")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.733333, 0.733333, 0.733333, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Index" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r2x4m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Milestone" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r2x4m")
+horizontal_alignment = 1
+vertical_alignment = 1

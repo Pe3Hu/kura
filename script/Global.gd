@@ -28,6 +28,7 @@ func init_arr() -> void:
 
 func init_num() -> void:
 	num.index = {}
+	num.index.servant = 0
 	
 	num.ring = {}
 	num.ring.r = 32
@@ -115,10 +116,13 @@ func init_scene() -> void:
 	scene.altar = load("res://scene/2/altar.tscn")
 	scene.pillar = load("res://scene/2/pillar.tscn")
 	scene.path = load("res://scene/2/path.tscn")
+	scene.rope = load("res://scene/2/rope.tscn")
+	scene.influence = load("res://scene/2/influence.tscn")
 	scene.forge = load("res://scene/3/forge.tscn")
-	scene.squad = load("res://scene/3/squad.tscn")
-	scene.servant = load("res://scene/3/servant.tscn")
 	scene.slot = load("res://scene/3/slot.tscn")
+	scene.squad = load("res://scene/3/squad.tscn")
+	scene.traveler = load("res://scene/3/traveler.tscn")
+	scene.servant = load("res://scene/3/servant.tscn")
 	scene.library = load("res://scene/4/library.tscn")
 	scene.card = load("res://scene/4/card.tscn")
 	scene.protocol = load("res://scene/4/protocol.tscn")
@@ -155,7 +159,6 @@ func load_data(path_: String):
 	var json_object = JSON.new()
 	var parse_err = json_object.parse(text)
 	return json_object.get_data()
-
 
 
 func get_random_key(dict_: Dictionary):

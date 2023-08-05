@@ -43,7 +43,6 @@ func update_label_value() -> void:
 
 func get_copy() -> MarginContainer:
 	var protocol = Global.scene.protocol.instantiate()
-
 	var props = get_script().get_script_property_list()
 	
 	for prop in props:

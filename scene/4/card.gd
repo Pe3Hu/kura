@@ -18,5 +18,5 @@ func apply_protocol(protocol_: MarginContainer) -> void:
 			value *= 1
 	
 	var aspect = aspects.get_node(protocol_.aspect)
-	aspect.value += value
-	aspect.update_label_value()
+	aspect.add_value(value)
+	#aspect.update_label_value()

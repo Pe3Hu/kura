@@ -2,6 +2,8 @@ extends MarginContainer
 
 
 @onready var bg = $BG
+@onready var length = $VBox/Length
+@onready var travelers = $VBox/Travelers
 
 
 var pillar = null

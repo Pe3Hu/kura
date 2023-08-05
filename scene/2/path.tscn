@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3y3h1ckaeklt"]
+[gd_scene load_steps=3 format=3 uid="uid://b3y3h1ckaeklt"]
 
 [ext_resource type="Script" path="res://scene/2/path.gd" id="1_7p7fs"]
+[ext_resource type="FontFile" uid="uid://beh7inkt4rf38" path="res://asset/font/rimouski sb.otf" id="2_cvpsf"]
 
 [node name="Path" type="MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -20,3 +21,18 @@ script = ExtResource("1_7p7fs")
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(0.643137, 0.643137, 0.643137, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Length" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.32549, 0.32549, 1)
+theme_override_fonts/font = ExtResource("2_cvpsf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Travelers" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+alignment = 1
