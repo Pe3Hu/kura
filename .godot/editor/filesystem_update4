@@ -30,3 +30,10 @@ res://scene/2/influence.gd
 res://scene/4/aspect.gd
 res://scene/4/card.gd
 res://scene/3/slot.gd
+res://scene/4/scramble.tscn
+res://scene/2/scramble.tscn
+res://scene/2/scramble.gd
+res://scene/4/aspects.gd
+res://scene/4/graveyard.tscn
+res://scene/2/graveyard.tscn
+res://scene/2/graveyard.gd

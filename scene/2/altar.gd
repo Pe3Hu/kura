@@ -17,7 +17,7 @@ func select_cards() -> void:
 func create_servant() -> void:
 	var servant = forge.prototype.get_copy()
 	servant.altar = self
-	servant.purpose = "obedience"
+	servant.purpose = "dominance"#"obedience"
 	servant.index = Global.num.index.servant
 	Global.num.index.servant += 1
 	var traveler = Global.scene.traveler.instantiate()

@@ -7,6 +7,11 @@ var index = null
 var altar = null
 var purpose = null
 var squad = null
+var dead = false
+
+
+func _ready() -> void:
+	aspects.servant = self
 
 
 func reset() -> void:
@@ -29,7 +34,6 @@ func get_copy() -> MarginContainer:
 
 func get_aspect_value(aspect_: String) -> Variant:
 	var aspect = aspects.get_node(aspect_)
-	#print([aspect.value, aspect.label.text])
 	return int(aspect.label.text)
 
 
@@ -38,3 +42,9 @@ func subdue() -> void:
 	Global.rng.randomize()
 	var value = Global.rng.randi_range(0, max)
 	squad.pillar.rope.add_influence(altar, value)
+
+
+
+func die() -> void:
+	dead = true
+	squad.pillar.graveyard.add_servant(self)

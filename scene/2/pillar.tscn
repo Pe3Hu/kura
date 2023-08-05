@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://h7c832ujr3mk"]
+[gd_scene load_steps=4 format=3 uid="uid://h7c832ujr3mk"]
 
 [ext_resource type="Script" path="res://scene/2/pillar.gd" id="1_n6tbp"]
+[ext_resource type="PackedScene" uid="uid://cp1tw45cjlkt4" path="res://scene/2/scramble.tscn" id="2_8ohp7"]
+[ext_resource type="PackedScene" uid="uid://chr4k8flbswx0" path="res://scene/2/graveyard.tscn" id="3_i8wrn"]
 
 [node name="Pillar" type="MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -14,6 +16,12 @@ grow_vertical = 2
 script = ExtResource("1_n6tbp")
 
 [node name="BG" type="ColorRect" parent="."]
+layout_mode = 2
+
+[node name="Scramble" parent="." instance=ExtResource("2_8ohp7")]
+layout_mode = 2
+
+[node name="Graveyard" parent="." instance=ExtResource("3_i8wrn")]
 layout_mode = 2
 
 [node name="HBox" type="HBoxContainer" parent="."]

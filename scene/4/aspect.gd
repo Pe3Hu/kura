@@ -4,6 +4,7 @@ extends MarginContainer
 @onready var label = $Label
 
 var card = null
+var value = null
 
 
 func update_label_color() -> void:
@@ -25,18 +26,19 @@ func update_label_color() -> void:
 
 
 func add_value(value_: int) -> void:
-	var value = int(label.text) + value_
-	label.text = ""
+#	if value < 0:
+#		label.text = "-"
+	#print([int(label.text), value_, int(label.text) + value_])
+	#var temp = int(label.text) + value_
+	label.text = str(int(label.text) + value_)
 	
-	if value < 0:
-		label.text = "-"
-	
-	label.text += str(value)
-	
-	if value != 0:
+	if int(label.text) != 0:
 		visible = true
 	else:
 		visible = false
+	
+	if int(label.text) < 0:
+		get_parent().servant.die()
 
 
 func reset() -> void:

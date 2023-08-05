@@ -124,4 +124,5 @@ func promote_obedience() -> void:
 
 
 func promote_dominance() -> void:
-	pass
+	for pillar in pillars.get_children():
+		pillar.scramble.start()

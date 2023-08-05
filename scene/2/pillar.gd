@@ -1,8 +1,10 @@
 extends MarginContainer
 
 
-@onready var vbox = $HBox
 @onready var bg = $BG
+@onready var scramble = $Scramble
+@onready var graveyard = $Graveyard
+@onready var vbox = $HBox
 @onready var squads = $HBox/Squads
 
 var paths = {}
@@ -53,6 +55,10 @@ func traveler_arrival(traveler_: MarginContainer) -> void:
 	traveler_.servant.squad = get_squad_for_servant(traveler_.servant)
 	traveler_.servant.squad.servants.add_child(traveler_.servant)
 	traveler_.servant.aspects.get_node("velocity").visible = false
+	
+	for aspect in traveler_.servant.aspects.get_children():
+		aspect.value = int(aspect.label.text)
+	
 	traveler_.get_parent().remove_child(self)
 	traveler_.queue_free()
 
