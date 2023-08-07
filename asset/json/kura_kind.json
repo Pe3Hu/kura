@@ -1,0 +1,44 @@
+[
+ {
+  "title": "troll",
+  "aspect": "severity",
+  "trait": "regeneration",
+  "sin": "gluttony"
+ },
+ {
+  "title": "beastman",
+  "aspect": "mutation",
+  "trait": "mutation",
+  "sin": "lust"
+ },
+ {
+  "title": "goblin",
+  "aspect": "blending",
+  "trait": "horde",
+  "sin": "envy"
+ },
+ {
+  "title": "elf",
+  "aspect": "velocity",
+  "trait": "dodge",
+  "sin": "sloth"
+ },
+ {
+  "title": "orc",
+  "aspect": "power",
+  "trait": "rage",
+  "sin": "anger"
+ },
+ {
+  "title": "dwarf",
+  "aspect": "autonomy",
+  "trait": "armor",
+  "sin": "avarice"
+ },
+ {
+  "title": "dragon",
+  "aspect": "everything",
+  "trait": "flake",
+  "sin": "pride"
+ }
+]

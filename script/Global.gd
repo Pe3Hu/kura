@@ -102,6 +102,58 @@ func init_dict() -> void:
 	dict.aspect.slot["power"] = "Head"
 	dict.aspect.slot["autonomy"] = "Torso"
 	dict.aspect.slot["velocity"] = "Limb"
+	
+	init_elements()
+	init_kinds()
+	init_totems()
+	init_traits()
+
+
+func init_elements() -> void:
+	dict.element = {}
+	dict.element.title = {}
+	var path = "res://asset/json/kura_element.json"
+	var array = load_data(path)
+	
+	for data in array:
+		dict.element.title[data.title] = data
+		dict.element.title[data.title].erase("title")
+
+
+func init_kinds() -> void:
+	dict.kind = {}
+	dict.kind.title = {}
+	var path = "res://asset/json/kura_kind.json"
+	var array = load_data(path)
+	
+	for data in array:
+		dict.kind.title[data.title] = data
+		dict.kind.title[data.title].erase("title")
+
+
+func init_totems() -> void:
+	dict.totem = {}
+	dict.totem.title = {}
+	var path = "res://asset/json/kura_totem.json"
+	var array = load_data(path)
+	
+	for data in array:
+		dict.totem.title[data.title] = data
+		dict.totem.title[data.title].erase("title")
+
+
+func init_traits() -> void:
+	dict.trait = {}
+	dict.trait.title = {}
+	var path = "res://asset/json/kura_trait.json"
+	var array = load_data(path)
+	
+	for data in array:
+		dict.trait.title[data.title] = {}
+		
+		for key in data:
+			if key != "title":
+				dict.trait.title[data.title][int(key)] = data[key]
 
 
 func init_node() -> void:
@@ -109,6 +161,7 @@ func init_node() -> void:
 
 
 func init_scene() -> void:
+	scene.blank = load("res://scene/0/blank.tscn")
 	scene.maze = load("res://scene/1/maze.tscn")
 	scene.room = load("res://scene/1/room.tscn")
 	scene.door = load("res://scene/1/door.tscn")
@@ -125,9 +178,11 @@ func init_scene() -> void:
 	scene.servant = load("res://scene/3/servant.tscn")
 	scene.library = load("res://scene/4/library.tscn")
 	scene.card = load("res://scene/4/card.tscn")
+	scene.granule = load("res://scene/4/granule.tscn")
 	scene.protocol = load("res://scene/4/protocol.tscn")
 	scene.aspects = load("res://scene/4/aspects.tscn")
 	scene.aspect = load("res://scene/4/aspect.tscn")
+	scene.icon = load("res://scene/4/icon.tscn")
 	
 
 

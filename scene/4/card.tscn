@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhr1o1ybprvvt"]
+[gd_scene load_steps=4 format=3 uid="uid://dhr1o1ybprvvt"]
 
 [ext_resource type="Script" path="res://scene/4/card.gd" id="1_fsyjw"]
+[ext_resource type="PackedScene" uid="uid://bosmmlrvh3vk1" path="res://scene/4/icon.tscn" id="2_8ivbh"]
 [ext_resource type="PackedScene" uid="uid://gjrm2qndq7xo" path="res://scene/4/aspects.tscn" id="2_bi2dy"]
 
 [node name="Card" type="MarginContainer"]
@@ -27,9 +28,13 @@ layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Aspects" parent="VBox" instance=ExtResource("2_bi2dy")]
+[node name="SlotIcon" parent="VBox" instance=ExtResource("2_8ivbh")]
 layout_mode = 2
 
-[node name="Protocols" type="VBoxContainer" parent="VBox"]
+[node name="Aspects" parent="VBox" instance=ExtResource("2_bi2dy")]
 visible = false
 layout_mode = 2
+
+[node name="Granules" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+alignment = 1

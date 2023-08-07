@@ -1,11 +1,12 @@
 extends MarginContainer
 
 
-@onready var past = $VBox/Past
-@onready var present = $VBox/Present
-@onready var future = $VBox/Future
-@onready var forgotten = $VBox/Forgotten
-@onready var reserve = $VBox/Reserve
+@onready var past = $VBox/Cards/Past
+@onready var present = $VBox/Cards/Present
+@onready var future = $VBox/Cards/Future
+@onready var forgotten = $VBox/Cards/Forgotten
+@onready var reserve = $VBox/Cards/Reserve
+@onready var granules = $VBox/Granules
 
 
 var hand = {}
@@ -26,12 +27,25 @@ func set_basic_cards() -> void:
 		for aspect in Global.arr.aspect:
 			var card = Global.scene.card.instantiate()
 			reserve.add_child(card)
+			var granule = Global.scene.granule.instantiate()
+			granules.add_child(granule)
+			granule.type = "root"
 			var protocol = Global.scene.protocol.instantiate()
 			protocol.operator = "add"
 			protocol.value = 10
 			protocol.aspect = aspect
-			card.slot = Global.dict.aspect.slot[aspect]
-			card.apply_protocol(protocol)
+			granule.apply_protocol(protocol)
+			card.apply_granule(granule)
+			
+			granule = Global.scene.granule.instantiate()
+			granules.add_child(granule)
+			granule.type = "suffix"
+			protocol = Global.scene.protocol.instantiate()
+			protocol.operator = "add"
+			protocol.value = 1
+			protocol.totem = Global.dict.totem.title.keys().pick_random()#"Wolf"#
+			granule.apply_protocol(protocol)
+			card.apply_granule(granule)
 
 
 func pull_cards_from_reserve() -> void:

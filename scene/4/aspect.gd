@@ -26,10 +26,6 @@ func update_label_color() -> void:
 
 
 func add_value(value_: int) -> void:
-#	if value < 0:
-#		label.text = "-"
-	#print([int(label.text), value_, int(label.text) + value_])
-	#var temp = int(label.text) + value_
 	label.text = str(int(label.text) + value_)
 	
 	if int(label.text) != 0:

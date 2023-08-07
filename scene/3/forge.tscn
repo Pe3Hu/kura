@@ -27,18 +27,30 @@ color = Color(1, 0.768627, 0.301961, 1)
 layout_mode = 2
 alignment = 1
 
-[node name="Slots" type="HBoxContainer" parent="VBox"]
+[node name="HBox" type="HBoxContainer" parent="VBox"]
 layout_mode = 2
 alignment = 1
 
-[node name="Head" parent="VBox/Slots" instance=ExtResource("2_88p1g")]
+[node name="Prefixs" type="VBoxContainer" parent="VBox/HBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Slots" type="HBoxContainer" parent="VBox/HBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Head" parent="VBox/HBox/Slots" instance=ExtResource("2_88p1g")]
 layout_mode = 2
 
-[node name="Torso" parent="VBox/Slots" instance=ExtResource("2_88p1g")]
+[node name="Torso" parent="VBox/HBox/Slots" instance=ExtResource("2_88p1g")]
 layout_mode = 2
 
-[node name="Limb" parent="VBox/Slots" instance=ExtResource("2_88p1g")]
+[node name="Limb" parent="VBox/HBox/Slots" instance=ExtResource("2_88p1g")]
 layout_mode = 2
+
+[node name="Suffixs" type="VBoxContainer" parent="VBox/HBox"]
+layout_mode = 2
+alignment = 1
 
 [node name="Prototype" parent="VBox" instance=ExtResource("3_uxvlk")]
 layout_mode = 2

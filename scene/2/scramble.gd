@@ -90,11 +90,10 @@ func press(servant_: MarginContainer, foe_: MarginContainer) -> void:
 	Global.rng.randomize()
 	var defense = Global.rng.randi_range(0, max.foe)
 	
-	print([attack, defense, max])
-	
 	if attack > defense:
 		var aspect = foe_.aspects.get_node("autonomy")
-		var damage = defense - attack
+		var damage = -floor(sqrt(attack - defense))
+		print(defense - attack, damage)
 		aspect.add_value(damage)
 		
 		if foe_.dead:

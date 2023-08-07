@@ -24,26 +24,34 @@ layout_mode = 2
 [node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Past" type="HBoxContainer" parent="VBox"]
+[node name="Granules" type="HBoxContainer" parent="VBox"]
 visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Present" type="HBoxContainer" parent="VBox"]
+[node name="Cards" type="VBoxContainer" parent="VBox"]
 layout_mode = 2
-alignment = 1
 
-[node name="Future" type="HBoxContainer" parent="VBox"]
+[node name="Past" type="HBoxContainer" parent="VBox/Cards"]
 visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Forgotten" type="HBoxContainer" parent="VBox"]
+[node name="Present" type="HBoxContainer" parent="VBox/Cards"]
+layout_mode = 2
+alignment = 1
+
+[node name="Future" type="HBoxContainer" parent="VBox/Cards"]
 visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Reserve" type="HBoxContainer" parent="VBox"]
+[node name="Forgotten" type="HBoxContainer" parent="VBox/Cards"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Reserve" type="HBoxContainer" parent="VBox/Cards"]
 visible = false
 layout_mode = 2
 alignment = 1

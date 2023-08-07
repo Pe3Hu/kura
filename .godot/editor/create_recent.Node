@@ -1,8 +1,8 @@
-HBoxContainer
 VBoxContainer
+HBoxContainer
+Label
 ProgressBar
 Timer
-Label
 ColorRect
 MarginContainer
 Node2D

@@ -1,0 +1,42 @@
+[
+ {
+  "title": "child of depth",
+  "buff": "regeneration",
+  "attack": "tidal waves"
+ },
+ {
+  "title": "child of sky",
+  "buff": "dodge",
+  "attack": "wind gust"
+ },
+ {
+  "title": "child of mountain",
+  "buff": "armor",
+  "attack": "rock fall"
+ },
+ {
+  "title": "child of sun",
+  "buff": "bloodlust",
+  "attack": "burn"
+ },
+ {
+  "title": "child of blizzard",
+  "buff": "spikes",
+  "attack": "freezing"
+ },
+ {
+  "title": "child of storm",
+  "buff": "fury",
+  "attack": "chain lightning"
+ },
+ {
+  "title": "child of volcanoe",
+  "buff": "flake",
+  "attack": "lava spill"
+ },
+ {
+  "title": "child of forest",
+  "buff": "ambush",
+  "attack": "poison"
+ }
+]

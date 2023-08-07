@@ -44,7 +44,6 @@ func subdue() -> void:
 	squad.pillar.rope.add_influence(altar, value)
 
 
-
 func die() -> void:
 	dead = true
 	squad.pillar.graveyard.add_servant(self)

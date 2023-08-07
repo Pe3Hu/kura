@@ -1,0 +1,110 @@
+[
+ {
+  "title": "wolf",
+  "aspect": "power",
+  "trait": "bloodlust",
+  "rune": "naud"
+ },
+ {
+  "title": "gorilla",
+  "aspect": "autonomy",
+  "trait": "bloodlust",
+  "rune": "naud"
+ },
+ {
+  "title": "bat",
+  "aspect": "velocity",
+  "trait": "theft",
+  "rune": "naud"
+ },
+ {
+  "title": "boar",
+  "aspect": "power",
+  "trait": "ram",
+  "rune": "reid"
+ },
+ {
+  "title": "ram",
+  "aspect": "autonomy",
+  "trait": "ram",
+  "rune": "reid"
+ },
+ {
+  "title": "deer",
+  "aspect": "velocity",
+  "trait": "ram",
+  "rune": "reid"
+ },
+ {
+  "title": "tiger",
+  "aspect": "power",
+  "trait": "ambush",
+  "rune": "jara"
+ },
+ {
+  "title": "turtle",
+  "aspect": "autonomy",
+  "trait": "armor",
+  "rune": "jara"
+ },
+ {
+  "title": "hawk",
+  "aspect": "velocity",
+  "trait": "ambush",
+  "rune": "jara"
+ },
+ {
+  "title": "bear",
+  "aspect": "power",
+  "trait": "fury",
+  "rune": "kauna"
+ },
+ {
+  "title": "rhinoceros",
+  "aspect": "autonomy",
+  "trait": "fury",
+  "rune": "kauna"
+ },
+ {
+  "title": "lizard",
+  "aspect": "velocity",
+  "trait": "regeneration",
+  "rune": "kauna"
+ },
+ {
+  "title": "wildebeest",
+  "aspect": "power",
+  "trait": "spikes",
+  "rune": "iwar"
+ },
+ {
+  "title": "hedgehog",
+  "aspect": "autonomy",
+  "trait": "spikes",
+  "rune": "iwar"
+ },
+ {
+  "title": "snake",
+  "aspect": "velocity",
+  "trait": "flake",
+  "rune": "iwar"
+ },
+ {
+  "title": "shark",
+  "aspect": "power",
+  "trait": "dodge",
+  "rune": "lagur"
+ },
+ {
+  "title": "whale",
+  "aspect": "autonomy",
+  "trait": "dodge",
+  "rune": "lagur"
+ },
+ {
+  "title": "carp",
+  "aspect": "velocity",
+  "trait": "dodge",
+  "rune": "lagur"
+ }
+]
