@@ -103,21 +103,61 @@ func init_dict() -> void:
 	dict.aspect.slot["autonomy"] = "Torso"
 	dict.aspect.slot["velocity"] = "Limb"
 	
-	init_elements()
+	dict.icon = {}
+	
+	init_spells()
+	init_origins()
 	init_kinds()
 	init_totems()
 	init_traits()
+	
 
-
-func init_elements() -> void:
-	dict.element = {}
-	dict.element.title = {}
-	var path = "res://asset/json/kura_element.json"
+func init_spells() -> void:
+	dict.spell = {}
+	dict.spell.calibration = {}
+	var path = "res://asset/json/kura_calibration.json"
 	var array = load_data(path)
 	
 	for data in array:
-		dict.element.title[data.title] = data
-		dict.element.title[data.title].erase("title")
+		if !dict.spell.calibration.has(data.type):
+			dict.spell.calibration[data.type] = {}
+		
+		dict.spell.calibration[data.type][data.title] = data.duplicate()
+		
+		if data.type == data.subtype:
+			dict.spell.calibration[data.type][data.title].erase("subtype")
+		
+		dict.spell.calibration[data.type][data.title].erase("type")
+		dict.spell.calibration[data.type][data.title].erase("title")
+	
+	dict.spell.symbol = {}
+	dict.icon.symbol = {}
+	path = "res://asset/json/kura_symbol.json"
+	array = load_data(path)
+	
+	for data in array:
+		dict.spell.symbol[data.title] = {}
+		dict.icon.symbol[data.title] = {}
+		
+		for key in data:
+			if key != "title" and data[key] != 0:
+				dict.spell.symbol[data.title][key] = data[key]
+				dict.icon.symbol[data.title][key] = 0
+				
+				while dict.icon.symbol[data.title][key] + 1 <= data[key] / 25:
+					dict.icon.symbol[data.title][key] += 1
+	
+
+
+func init_origins() -> void:
+	dict.origin = {}
+	dict.origin.title = {}
+	var path = "res://asset/json/kura_origin.json"
+	var array = load_data(path)
+	
+	for data in array:
+		dict.origin.title[data.title] = data
+		dict.origin.title[data.title].erase("title")
 
 
 func init_kinds() -> void:

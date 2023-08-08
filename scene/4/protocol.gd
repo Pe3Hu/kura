@@ -9,6 +9,8 @@ var operator = null
 var aspect = null
 var default = false
 var totem = null
+var origin = null
+var kind = null
 
 
 func update() -> void:
@@ -46,6 +48,12 @@ func update_label_value() -> void:
 	
 	if totem != null:
 		label.text += " " + totem[0] + totem[1]
+	
+	if kind != null:
+		label.text += " " + kind[0] + kind[1]
+	
+	if origin != null:
+		label.text += " " + origin[0] + origin[6] + origin[9]
 
 
 func get_copy() -> MarginContainer:

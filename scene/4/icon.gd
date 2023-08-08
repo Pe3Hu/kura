@@ -22,3 +22,27 @@ func draw_slot_type(slot_: String) -> void:
 			blank.bg.set_color(Color.DARK_GRAY)
 		else:
 			blank.bg.set_color(Color.LIGHT_GRAY)
+
+
+func draw_spell_symbol(symbol_: String) -> void:
+	squares.visible = true
+	var max_h = 360.0
+	var s = 0.75
+	var v = 1
+	var h = 0
+	
+	for aspect in Global.dict.icon.symbol[symbol_]:
+		for _i in Global.dict.icon.symbol[symbol_][aspect]:
+			var blank = Global.scene.blank.instantiate()
+			squares.add_child(blank)
+			
+			match aspect:
+				"power":
+					h = 0 / max_h
+				"autonomy":
+					h = 240 / max_h
+				"velocity":
+					h = 120 / max_h
+			
+			var color_ = Color.from_hsv(h, s, v)
+			blank.bg.set_color(color_)

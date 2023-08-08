@@ -14,5 +14,3 @@ func apply_protocol(protocol_: MarginContainer) -> void:
 	protocol_.granule = self
 	protocols.add_child(protocol_)
 	protocol_.update()
-
-

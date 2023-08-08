@@ -1,0 +1,50 @@
+[
+ {
+  "title": "passion",
+  "power": 100,
+  "autonomy": 0,
+  "velocity": 0
+ },
+ {
+  "title": "courage",
+  "power": 75,
+  "autonomy": 25,
+  "velocity": 0
+ },
+ {
+  "title": "greatness",
+  "power": 50,
+  "autonomy": 50,
+  "velocity": 0
+ },
+ {
+  "title": "dignity",
+  "power": 25,
+  "autonomy": 75,
+  "velocity": 0
+ },
+ {
+  "title": "joy",
+  "power": 75,
+  "autonomy": 0,
+  "velocity": 25
+ },
+ {
+  "title": "freshness",
+  "power": 50,
+  "autonomy": 0,
+  "velocity": 50
+ },
+ {
+  "title": "hope",
+  "power": 25,
+  "autonomy": 0,
+  "velocity": 75
+ },
+ {
+  "title": "tranquility",
+  "power": 40,
+  "autonomy": 30,
+  "velocity": 30
+ }
+]

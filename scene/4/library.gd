@@ -43,7 +43,9 @@ func set_basic_cards() -> void:
 			protocol = Global.scene.protocol.instantiate()
 			protocol.operator = "add"
 			protocol.value = 1
-			protocol.totem = Global.dict.totem.title.keys().pick_random()#"Wolf"#
+			#protocol.totem = Global.dict.totem.title.keys().pick_random()#"Wolf"#
+			#protocol.origin = Global.dict.origin.title.keys().pick_random()#"Wolf"#
+			#protocol.kind = "Wolf"#Global.dict.kind.title.keys().pick_random()#"Wolf"#
 			granule.apply_protocol(protocol)
 			card.apply_granule(granule)
 

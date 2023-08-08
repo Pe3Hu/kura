@@ -1,0 +1,80 @@
+[
+ {
+  "title": "autonomy",
+  "type": "aspect",
+  "price": 10,
+  "subtype": "aspect"
+ },
+ {
+  "title": "power",
+  "type": "aspect",
+  "price": 14,
+  "subtype": "aspect"
+ },
+ {
+  "title": "velocity",
+  "type": "aspect",
+  "price": 16,
+  "subtype": "aspect"
+ },
+ {
+  "title": "min",
+  "type": "aspect",
+  "price": 20,
+  "subtype": "aspect"
+ },
+ {
+  "title": "max",
+  "type": "aspect",
+  "price": 5,
+  "subtype": "aspect"
+ },
+ {
+  "title": "random",
+  "type": "aspect",
+  "price": 6,
+  "subtype": "aspect"
+ },
+ {
+  "title": "high",
+  "type": "servant",
+  "price": 7,
+  "subtype": "aspect"
+ },
+ {
+  "title": "low",
+  "type": "servant",
+  "price": 13,
+  "subtype": "aspect"
+ },
+ {
+  "title": "fresh",
+  "type": "servant",
+  "price": 12,
+  "subtype": "time"
+ },
+ {
+  "title": "old",
+  "type": "servant",
+  "price": 8,
+  "subtype": "time"
+ },
+ {
+  "title": "aggressive",
+  "type": "servant",
+  "price": 9,
+  "subtype": "threat"
+ },
+ {
+  "title": "quiet",
+  "type": "servant",
+  "price": 11,
+  "subtype": "threat"
+ },
+ {
+  "title": "standard",
+  "type": "servant",
+  "price": 10,
+  "subtype": "queue"
+ }
+]

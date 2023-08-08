@@ -8,7 +8,7 @@ extends MarginContainer
 
 
 var totems = {}
-var elements = {}
+var origins = {}
 var kinds = {}
 
 
@@ -17,19 +17,35 @@ func _ready() -> void:
 		slot.prototype = prototype
 		slot.forge = self
 	
+	reset()
+
+
+func reset() -> void:
+	prototype.reset()
+	totems = {}
+	origins = {}
+	kinds = {}
+	
 	set_default_slots()
-	#prefix.draw_servant_affix("No")
-	#suffix.draw_servant_affix("No")
+	reset_affixs()
 
 
 func set_default_slots() -> void:
-	prototype.reset()
-	totems = {}
-	elements = {}
-	kinds = {}
-	
 	for slot in slots.get_children():
 		slot.set_default()
+
+
+func reset_affixs() -> void:
+	for prefix in prefixs.get_children():
+		prefixs.remove_child(prefix)
+		prefix.queue_free()
+	
+	for suffix in suffixs.get_children():
+		suffixs.remove_child(suffix)
+		suffix.queue_free()
+	
+	var symbol = Global.dict.spell.symbol.keys().pick_random()
+	add_affix("symbol", symbol)
 
 
 func use_card(card_: MarginContainer) -> void:
@@ -48,5 +64,12 @@ func add_affix(type_: String, title_: String) -> void:
 	match type_:
 		"totem":
 			suffixs.add_child(icon)
+		"kind":
+			suffixs.add_child(icon)
+		"origin":
+			suffixs.add_child(icon)
+		"symbol":
+			prefixs.add_child(icon)
+			icon.draw_spell_symbol(title_)
 	
 	icon.draw_servant_affix(title_)

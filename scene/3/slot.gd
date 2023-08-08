@@ -33,15 +33,18 @@ func apply_protocol(protocol_: MarginContainer) -> void:
 		var aspect = prototype.aspects.get_node(protocol_.aspect)
 		aspect.add_value(value)
 	
-	if protocol_.totem != null:
-		if !forge.totems.has(protocol_.totem):
-			forge.totems[protocol_.totem] = 0
-		
-		if forge.totems[protocol_.totem] < 2:
-			forge.totems[protocol_.totem] += value
+	var affixs = ["totem", "origin", "kind"]
+	
+	for affix in affixs:
+		if protocol_[affix] != null:
+			if !forge.totems.has(protocol_[affix]):
+				forge.totems[protocol_[affix]] = 0
 			
-			if forge.totems[protocol_.totem] >= 2:
-				forge.add_affix("totem", protocol_.totem)
+			if forge.totems[protocol_[affix]] < 2:
+				forge.totems[protocol_[affix]] += value
+				
+				if forge.totems[protocol_[affix]] >= 2:
+					forge.add_affix(affix, protocol_[affix])
 
 
 func remove_default() -> void:
