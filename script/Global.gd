@@ -23,7 +23,11 @@ func _ready() -> void:
 
 
 func init_arr() -> void:
+	arr.sequence = {}
+	arr.sequence["A000040"] = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+	
 	arr.aspect = ["power", "autonomy", "velocity"]
+	arr.synergy = ["totem", "origin", "kind"]
 
 
 func init_num() -> void:

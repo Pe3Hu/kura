@@ -10,6 +10,7 @@ extends MarginContainer
 var totems = {}
 var origins = {}
 var kinds = {}
+var symbol = null
 
 
 func _ready() -> void:
@@ -44,12 +45,13 @@ func reset_affixs() -> void:
 		suffixs.remove_child(suffix)
 		suffix.queue_free()
 	
-	var symbol = Global.dict.spell.symbol.keys().pick_random()
+	symbol = Global.dict.spell.symbol.keys().pick_random()
 	add_affix("symbol", symbol)
 
 
 func use_card(card_: MarginContainer) -> void:
 	var slot = slots.get_node(card_.slot)
+	slot.cards.append(card_)
 	card_.bg.visible = false
 	
 	for granule in card_.granules.get_children():

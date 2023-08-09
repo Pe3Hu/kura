@@ -7,6 +7,7 @@ extends MarginContainer
 @onready var slotIcon = $VBox/SlotIcon
 
 var slot = null
+var synergies = {}
 
 
 func apply_granule(granule_: MarginContainer) -> void:
@@ -32,3 +33,20 @@ func apply_protocol(protocol_: MarginContainer) -> void:
 	if protocol_.aspect != null:
 		var aspect = aspects.get_node(protocol_.aspect)
 		aspect.add_value(value)
+	
+	for synergy in Global.arr.synergy:
+		if protocol_[synergy] != null:
+			if !synergies.has(protocol_[synergy]):
+				synergies[protocol_[synergy]] = 0
+			
+			synergies[protocol_[synergy]] += value
+
+
+func get_aspects_assessment(weights_: Dictionary) -> int:
+	var assessment = 0
+	
+	for aspect in aspects.get_children():
+		if weights_.has(aspect.name):
+			assessment += weights_[aspect.name] * int(aspect.label.text) 
+	
+	return assessment

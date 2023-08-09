@@ -10,8 +10,120 @@ var arena = null
 
 
 func select_cards() -> void:
+	find_synergies()
+	finish_leftovers()
+
+
+func aspects_assessment(synergies: Variant) -> void:
+	var weights = Global.dict.icon.symbol[forge.symbol]
+	var assessments = {}
+	
 	for card in library.present.get_children():
+		var flag = synergies == null
+		
+		if !flag:
+			for synergy in synergies:
+				if card.synergies.has(synergy):
+					flag = true
+		
+		if flag:
+			var slot = forge.slots.get_node(card.slot)
+			
+			if slot.cards.is_empty():
+				var assessment = card.get_aspects_assessment(weights)
+				
+				if assessment > 0:
+					assessments[card] = card.get_aspects_assessment(weights)
+	
+	while !assessments.keys().is_empty():
+		var card = Global.get_random_key(assessments)
+		assessments.erase(card)
 		forge.use_card(card)
+		var slot = forge.slots.get_node(card.slot)
+		
+		if !slot.cards.is_empty():
+			for _i in range(assessments.keys().size()-1, -1, -1):
+				card = assessments.keys()[_i]
+				
+				if card.slot == slot.name:
+					assessments.erase(card)
+	
+	if synergies != null:
+		finish_synergy(synergies)
+
+
+func find_synergies() -> void:
+	var synergies = {}
+	
+	for card in library.present.get_children():
+		for synergy in card.synergies:
+			if !synergies.has(synergy):
+				synergies[synergy] = {}
+			
+			if !synergies[synergy].has(card.slot):
+				synergies[synergy][card.slot] = 0
+			
+			synergies[synergy][card.slot] += 1
+	
+	for _i in range(synergies.keys().size()-1, -1, -1):
+		var synergy = synergies.keys()[_i]
+		
+		if synergies[synergy].keys().size() < 2:
+			synergies.erase(synergy)
+	
+	print(synergies)
+	
+	if !synergies.keys().is_empty():
+		aspects_assessment(synergies)
+	else:
+		aspects_assessment(null)
+
+
+func finish_synergy(synergies_: Dictionary) -> void:
+	var slots = {}
+	
+	if synergies_ != null:
+		for card in library.present.get_children():
+			var slot = forge.slots.get_node(card.slot)
+			
+			if card.bg.visible and slot.cards.is_empty():
+				for synergy in card.synergies:
+					if synergies_.has(synergy):
+						if !slots.has(card.slot):
+							slots[card.slot] = []
+						
+						slots[card.slot].append(card)
+	
+	for slot in slots:
+		var card = slots[slot].pick_random()
+		forge.use_card(card)
+
+
+
+func finish_leftovers() -> void:
+	var slots = {}
+	
+	for card in library.present.get_children():
+		var slot = forge.slots.get_node(card.slot)
+		
+		if card.bg.visible and slot.cards.is_empty():
+			var leftover = true
+			
+			for synergy in card.synergies:
+				if library.synergies.has(synergy):
+					leftover = false
+					break
+			
+			if leftover:
+				if !slots.has(card.slot):
+					slots[card.slot] = []
+				
+				slots[card.slot].append(card)
+	
+	for slot in slots:
+		var card = slots[slot].pick_random()
+		forge.use_card(card)
+
 
 
 func create_servant() -> void:

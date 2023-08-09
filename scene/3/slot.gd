@@ -5,15 +5,18 @@ extends MarginContainer
 
 var prototype = null
 var forge = null
+var cards = []
 
 
 func set_default() -> void:
+	cards = []
+	
 	for protocol in protocols.get_children():
 		protocols.remove_child(protocol)
 	
 	var protocol = Global.scene.protocol.instantiate()
 	protocol.operator = "add"
-	protocol.value = 5
+	protocol.value = 10
 	protocol.default = true
 	protocol.aspect = Global.dict.slot.aspect[name]
 	apply_protocol(protocol)
