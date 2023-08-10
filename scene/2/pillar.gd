@@ -56,6 +56,12 @@ func traveler_arrival(traveler_: MarginContainer) -> void:
 	traveler_.servant.squad.servants.add_child(traveler_.servant)
 	traveler_.servant.aspects.get_node("velocity").visible = false
 	
+	var icon = traveler_.index
+	icon.get_parent().remove_child(icon)
+	traveler_.servant.hbox.add_child(traveler_.index)
+	traveler_.servant.hbox.move_child(traveler_.index, 0)
+	traveler_.servant.index = icon
+	
 	for aspect in traveler_.servant.aspects.get_children():
 		aspect.value = int(aspect.label.text)
 	
@@ -70,6 +76,17 @@ func get_squad_for_servant(servant_: MarginContainer) -> Variant:
 				return squad
 	
 	return null
+
+
+func get_squads_based_on_purpose(purpose_: String) -> Array:
+	var squads_ = []
+	
+	for squad in squads.get_children():
+		if squad.get("purpose") != null:
+			if squad.purpose == purpose_:
+				squads_.append(squad)
+	
+	return squads_
 
 
 func add_rope() -> void:

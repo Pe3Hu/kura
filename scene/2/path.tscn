@@ -33,6 +33,6 @@ theme_override_fonts/font = ExtResource("2_cvpsf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Travelers" type="VBoxContainer" parent="VBox"]
+[node name="Travelers" type="HBoxContainer" parent="VBox"]
 layout_mode = 2
 alignment = 1

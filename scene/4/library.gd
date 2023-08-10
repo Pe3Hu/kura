@@ -20,7 +20,6 @@ func _ready() -> void:
 	deck.max = 12
 	set_basic_cards()
 	pull_cards_from_reserve()
-	draw_hand()
 
 
 func set_basic_cards() -> void:
@@ -93,7 +92,7 @@ func set_synergies() -> void:
 			
 			synergies[synergy].total = total
 	
-	print(synergies)
+	#print(synergies)
 
 
 func pull_cards_from_reserve() -> void:
@@ -111,7 +110,26 @@ func pull_card_from_reserve(card_: MarginContainer) -> void:
 
 func draw_hand() -> void:
 	for _i in hand.draw:
-		var card = future.get_children().pick_random()
+		if present.get_child_count() < hand.max:
+			
+			var card = pull_future_card() 
+			
+			card_transfer(card)
+		else:
+			return
+
+
+func pull_future_card() -> MarginContainer:
+	if future.get_child_count() == 0:
+		transfer_all_cards("past")
+	
+	var card = future.get_children().pick_random()
+	return card
+
+
+func transfer_all_cards(name_: String) -> void:
+	while get(name_).get_child_count() != 0:
+		var card = get(name_).get_child(0)
 		card_transfer(card)
 
 

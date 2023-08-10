@@ -8,6 +8,11 @@ var path = null
 var servant = null
 
 
+func _ready() -> void:
+	index.draw_index(Global.num.index.servant) 
+	Global.num.index.servant += 1
+
+
 func move() -> void:
 	var max = servant.get_aspect_value("velocity")
 	Global.rng.randomize()

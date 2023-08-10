@@ -1,13 +1,15 @@
 extends MarginContainer
 
 
+@onready var hbox = $VBox/HBox
 @onready var aspects = $VBox/HBox/Aspects
+#@onready var index = $VBox/HBox/Index
 
-var index = null
 var altar = null
 var purpose = null
 var squad = null
 var dead = false
+var index = null
 
 
 func _ready() -> void:
@@ -22,6 +24,9 @@ func reset() -> void:
 func get_copy() -> MarginContainer:
 	var servant = self.duplicate()
 	servant.aspects = Global.scene.aspects.instantiate()
+	#var icon = Global.scene.icon.instantiate()
+	#icon.name = "Index"
+	#servant.index = icon
 	
 	for _i in aspects.get_child_count():
 		servant.aspects.get_child(_i).label = servant.aspects.get_child(_i).get_node("Label")
@@ -47,3 +52,5 @@ func subdue() -> void:
 func die() -> void:
 	dead = true
 	squad.pillar.graveyard.add_servant(self)
+
+

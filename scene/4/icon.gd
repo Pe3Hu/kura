@@ -6,8 +6,9 @@ extends MarginContainer
 
 
 func draw_servant_affix(status_: String) -> void:
-	label.visible = true
-	label.text = status_
+	if !label.visible:
+		label.visible = true
+		label.text = status_
 
 
 func draw_slot_type(slot_: String) -> void:
@@ -46,3 +47,18 @@ func draw_spell_symbol(symbol_: String) -> void:
 			
 			var color_ = Color.from_hsv(h, s, v)
 			blank.bg.set_color(color_)
+
+
+func draw_purpose(calibration_: Dictionary) -> void:
+	label.visible = true
+	
+	if calibration_.servant == null:
+		label.text = "obedience"
+	else:
+		label.text = calibration_.aspect + " " + calibration_.servant
+
+
+func draw_index(index_: int) -> void:
+	if !label.visible:
+		label.visible = true
+		label.text = str(index_)

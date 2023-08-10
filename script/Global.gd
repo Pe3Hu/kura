@@ -28,6 +28,7 @@ func init_arr() -> void:
 	
 	arr.aspect = ["power", "autonomy", "velocity"]
 	arr.synergy = ["totem", "origin", "kind"]
+	arr.purpose = ["dominance", "obedience"]
 
 
 func init_num() -> void:
@@ -151,6 +152,27 @@ func init_spells() -> void:
 				while dict.icon.symbol[data.title][key] + 1 <= data[key] / 25:
 					dict.icon.symbol[data.title][key] += 1
 	
+	dict.calibration = {}
+	dict.calibration.price = {}
+	
+	for aspect in dict.spell.calibration.aspect:
+		for servant in dict.spell.calibration.servant:
+			var price = int(dict.spell.calibration.aspect[aspect].price + dict.spell.calibration.servant[servant].price)
+			var calibration = {}
+			calibration.aspect = aspect
+			calibration.servant = servant
+			
+			if !dict.calibration.price.has(price):
+				dict.calibration.price[price] = []
+			
+			dict.calibration.price[price].append(calibration)
+	
+	var prices = dict.calibration.price.keys()
+	prices.sort()
+	dict.calibration.min = prices.front()
+	dict.calibration.max = prices.back()
+	dict.calibration.base = 20
+	dict.calibration.dispersion = 6
 
 
 func init_origins() -> void:

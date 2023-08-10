@@ -11,8 +11,8 @@ func _ready() -> void:
 	
 	for altar in Global.node.arena.altars:
 		altar.select_cards()
-		#altar.create_servant()
-	pass
+		altar.create_servant()
+		pass
 
 
 func _input(event) -> void:

@@ -48,6 +48,7 @@ func add_altar() -> void:
 	var altar = Global.scene.altar.instantiate()
 	vbox.add_child(altar)
 	altar.arena = self
+	altar.forge.reset()
 	
 	if altars.is_empty():
 		altar.lord = "player"
@@ -100,6 +101,9 @@ func update_pillars() -> void:
 
 
 func _at_end_of_round() -> void:
+	for altar in altars:
+		altar.round_start()
+	
 	move_travelers()
 	promote_obedience()
 	promote_dominance()

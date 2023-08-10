@@ -2,21 +2,28 @@ extends MarginContainer
 
 
 var queue = []
-var end = null
+var end = false
 
 
 func start() -> void:
+	queue = []
 	end = false
 	set_servant_queue()
-	queue_up()
+	
+	if !queue.is_empty():
+		queue_up()
 
 
 func set_servant_queue() -> void:
 	var datas = {}
-	var keys = ["dominances"]
+	var keys = []
 	
-	if get_parent().rope == null:
-		keys.append("obediences")
+	for purpose in Global.arr.purpose:
+		var key = purpose + "s"
+		keys.append(key)
+	
+	#if get_parent().rope == null:
+	#	keys.append("obediences")
 	
 	for key in keys:
 		for altar in get_parent().get(key):
@@ -29,7 +36,7 @@ func set_servant_queue() -> void:
 					datas[velocity] = []
 				
 				var data = {}
-				data.index = servant.index
+				data.index = int(servant.index.label.text)
 				data.servant = servant
 				datas[velocity].append(data)
 	
@@ -50,7 +57,7 @@ func queue_up() -> void:
 
 
 func activate(servant_: MarginContainer) -> void:
-	if check_foe(servant_.altar):
+	if check_foe(servant_.altar) and servant_.purpose == "dominance":
 		var foe = get_foe(servant_)
 		press(servant_, foe)
 	else:
@@ -78,6 +85,7 @@ func get_foe(servant_: MarginContainer) -> MarginContainer:
 			datas.append(data)
 	
 	datas.sort_custom(func(a, b): return a.proximity < b.proximity)
+	print(datas.front().servant.index)
 	return datas.front().servant
 
 
@@ -93,7 +101,7 @@ func press(servant_: MarginContainer, foe_: MarginContainer) -> void:
 	if attack > defense:
 		var aspect = foe_.aspects.get_node("autonomy")
 		var damage = -floor(sqrt(attack - defense))
-		print(defense - attack, damage)
+		#print(defense - attack, damage)
 		aspect.add_value(damage)
 		
 		if foe_.dead:

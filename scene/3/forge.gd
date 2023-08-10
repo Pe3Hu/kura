@@ -6,11 +6,13 @@ extends MarginContainer
 @onready var prefixs = $VBox/HBox/Prefixs
 @onready var suffixs = $VBox/HBox/Suffixs
 
-
+var altar = null
 var totems = {}
 var origins = {}
 var kinds = {}
 var symbol = null
+var purpose = null
+var calibration = {}
 
 
 func _ready() -> void:
@@ -18,7 +20,7 @@ func _ready() -> void:
 		slot.prototype = prototype
 		slot.forge = self
 	
-	reset()
+	calibration.balance = 0
 
 
 func reset() -> void:
@@ -47,17 +49,16 @@ func reset_affixs() -> void:
 	
 	symbol = Global.dict.spell.symbol.keys().pick_random()
 	add_affix("symbol", symbol)
-
-
-func use_card(card_: MarginContainer) -> void:
-	var slot = slots.get_node(card_.slot)
-	slot.cards.append(card_)
-	card_.bg.visible = false
 	
-	for granule in card_.granules.get_children():
-		for protocol in granule.protocols.get_children():
-			var copy = protocol.get_copy()
-			slot.apply_protocol(copy)
+	purpose = altar.purposes.pick_random()
+	
+	if purpose == "obedience":
+		calibration.aspect = null
+		calibration.servant = null
+	else:
+		set_calibrations()
+	
+	add_affix("purpose", purpose)
 
 
 func add_affix(type_: String, title_: String) -> void:
@@ -73,5 +74,39 @@ func add_affix(type_: String, title_: String) -> void:
 		"symbol":
 			prefixs.add_child(icon)
 			icon.draw_spell_symbol(title_)
+		"purpose":
+			prefixs.add_child(icon)
+			icon.draw_purpose(calibration)
 	
 	icon.draw_servant_affix(title_)
+
+
+func set_calibrations() -> void:
+	var limit = {}
+	var balance = Global.dict.calibration.base + calibration.balance
+	limit.min = max(Global.dict.calibration.min, balance - Global.dict.calibration.dispersion / 2)
+	limit.max = limit.min + Global.dict.calibration.dispersion
+	
+	if limit.max > Global.dict.calibration.max:
+		limit.max = Global.dict.calibration.max
+		limit.min = limit.max - Global.dict.calibration.dispersion
+	
+	Global.rng.randomize()
+	var price = Global.rng.randi_range(limit.min, limit.max)
+	balance += Global.dict.calibration.base - price
+	
+	var calibration_ = Global.dict.calibration.price[price].pick_random()
+	calibration.aspect = calibration_.aspect
+	calibration.servant = calibration_.servant
+
+
+func use_card(card_: MarginContainer) -> void:
+	var slot = slots.get_node(card_.slot)
+	slot.cards.append(card_)
+	#card_.bg.visible = false
+	altar.library.card_transfer(card_)
+	
+	for granule in card_.granules.get_children():
+		for protocol in granule.protocols.get_children():
+			var copy = protocol.get_copy()
+			slot.apply_protocol(copy)

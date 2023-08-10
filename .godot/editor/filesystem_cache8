@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1691577630
+::res://::1691663667
 README.md::TextFile::-1::1691419234::0::1::::<><>::
 ::res://asset/::1690802234
 default_env.tres::Environment::-1::1690116911::0::1::::<><>::
@@ -21,9 +21,9 @@ kura_symbol.json::JSON::-1::1691497894::0::1::::<><>::
 kura_totem.json::JSON::-1::1691309654::0::1::::<><>::
 kura_trait.json::JSON::-1::1691417840::0::1::::<><>::
 ::res://scene/::1691247324
-::res://scene/0/::1691498824
+::res://scene/0/::1691583096
 blank.gd::GDScript::-1::1691416161::0::1::::<>MarginContainer<>::
-blank.tscn::PackedScene::706186300528003691::1691498824::0::1::::<><>::res://scene/0/blank.gd
+blank.tscn::PackedScene::706186300528003691::1691583096::0::1::::<><>::res://scene/0/blank.gd
 game.gd::GDScript::-1::1691419159::0::1::::<>Node<>::
 game.tscn::PackedScene::8246655032211948728::1691147405::0::1::::<><>::res://scene/0/game.gd
 ::res://scene/1/::1691147405
@@ -32,48 +32,48 @@ maze.gd::GDScript::-1::1690895079::0::1::::<>MarginContainer<>::
 maze.tscn::PackedScene::3966851694995844696::1691147405::0::1::::<><>::res://scene/1/maze.gd
 room.gd::GDScript::-1::1690894539::0::1::::<>Polygon2D<>::
 room.tscn::PackedScene::1749993056958071237::1691147405::0::1::::<><>::res://scene/1/room.gd
-::res://scene/2/::1691498823
-altar.gd::GDScript::-1::1691256772::0::1::::<>MarginContainer<>::
-altar.tscn::PackedScene::8035061283802702049::1691498823::0::1::::<><>::res://scene/2/altar.gd<>uid://ddg7bwpf5dhel::::res://scene/4/library.tscn<>uid://bpjgfsypd6eh::::res://scene/3/forge.tscn
+::res://scene/2/::1691583096
+altar.gd::GDScript::-1::1691583095::0::1::::<>MarginContainer<>::
+altar.tscn::PackedScene::8035061283802702049::1691583096::0::1::::<><>::res://scene/2/altar.gd<>uid://ddg7bwpf5dhel::::res://scene/4/library.tscn<>uid://bpjgfsypd6eh::::res://scene/3/forge.tscn
 arena.gd::GDScript::-1::1691255790::0::1::::<>MarginContainer<>::
-arena.tscn::PackedScene::7006948342241090634::1691498823::0::1::::<><>::res://scene/2/arena.gd
+arena.tscn::PackedScene::7006948342241090634::1691583095::0::1::::<><>::res://scene/2/arena.gd
 graveyard.gd::GDScript::-1::1691258567::0::1::::<>MarginContainer<>::
-graveyard.tscn::PackedScene::5301038086897157951::1691498823::0::1::::<><>::res://scene/2/graveyard.gd
+graveyard.tscn::PackedScene::5301038086897157951::1691583096::0::1::::<><>::res://scene/2/graveyard.gd
 influence.gd::GDScript::-1::1691254753::0::1::::<>MarginContainer<>::
 influence.tscn::PackedScene::8081440670972185071::1691413512::0::1::::<><>::res://scene/2/influence.gd
 path.gd::GDScript::-1::1691247719::0::1::::<>MarginContainer<>::
 path.tscn::PackedScene::4402967317161473681::1691413511::0::1::::<><>::res://scene/2/path.gd<>uid://beh7inkt4rf38
 pillar.gd::GDScript::-1::1691258567::0::1::::<>MarginContainer<>::
-pillar.tscn::PackedScene::557563872065493738::1691498823::0::1::::<><>::res://scene/2/pillar.gd<>uid://cp1tw45cjlkt4::::res://scene/2/scramble.tscn<>uid://chr4k8flbswx0::::res://scene/2/graveyard.tscn
+pillar.tscn::PackedScene::557563872065493738::1691583096::0::1::::<><>::res://scene/2/pillar.gd<>uid://cp1tw45cjlkt4::::res://scene/2/scramble.tscn<>uid://chr4k8flbswx0::::res://scene/2/graveyard.tscn
 rope.gd::GDScript::-1::1691254590::0::1::::<>MarginContainer<>::
 rope.tscn::PackedScene::1385207798095070794::1691413511::0::1::::<><>::res://scene/2/rope.gd
 scramble.gd::GDScript::-1::1691413366::0::1::::<>MarginContainer<>::
-scramble.tscn::PackedScene::5880542323515341683::1691498823::0::1::::<><>::res://scene/2/scramble.gd
-::res://scene/3/::1691498823
-forge.gd::GDScript::-1::1691498687::0::1::::<>MarginContainer<>::
-forge.tscn::PackedScene::101711969181135891::1691498823::0::1::::<><>::res://scene/3/forge.gd<>uid://dbobp1qmn168d::::res://scene/3/slot.tscn<>uid://b1yw3l206g5rk::::res://scene/3/servant.tscn
+scramble.tscn::PackedScene::5880542323515341683::1691583096::0::1::::<><>::res://scene/2/scramble.gd
+::res://scene/3/::1691583096
+forge.gd::GDScript::-1::1691579433::0::1::::<>MarginContainer<>::
+forge.tscn::PackedScene::101711969181135891::1691583096::0::1::::<><>::res://scene/3/forge.gd<>uid://dbobp1qmn168d::::res://scene/3/slot.tscn<>uid://b1yw3l206g5rk::::res://scene/3/servant.tscn
 servant.gd::GDScript::-1::1691413309::0::1::::<>MarginContainer<>::
-servant.tscn::PackedScene::4262262081093730884::1691498823::0::1::::<><>::res://scene/3/servant.gd<>uid://gjrm2qndq7xo::::res://scene/4/aspects.tscn
-slot.gd::GDScript::-1::1691493613::0::1::::<>MarginContainer<>::
-slot.tscn::PackedScene::7258441078063143041::1691498823::0::1::::<><>::res://scene/3/slot.gd
+servant.tscn::PackedScene::4262262081093730884::1691583096::0::1::::<><>::res://scene/3/servant.gd<>uid://gjrm2qndq7xo::::res://scene/4/aspects.tscn
+slot.gd::GDScript::-1::1691579433::0::1::::<>MarginContainer<>::
+slot.tscn::PackedScene::7258441078063143041::1691583096::0::1::::<><>::res://scene/3/slot.gd
 squad.gd::GDScript::-1::1691250225::0::1::::<>MarginContainer<>::
 squad.tscn::PackedScene::2876886623481819724::1691413511::0::1::::<><>::res://scene/3/squad.gd
 traveler.gd::GDScript::-1::1691250437::0::1::::<>MarginContainer<>::
 traveler.tscn::PackedScene::1885562849306304079::1691413511::0::1::::<><>::res://scene/3/traveler.gd<>uid://beh7inkt4rf38
-::res://scene/4/::1691498824
+::res://scene/4/::1691583096
 aspect.gd::GDScript::-1::1691318361::0::1::::<>MarginContainer<>::
-aspect.tscn::PackedScene::981249666369696223::1691254666::0::1::::<><>::res://scene/4/aspect.gd<>uid://brthmdy0bvgqo
+aspect.tscn::PackedScene::981249666369696223::1691583096::0::1::::<><>::res://scene/4/aspect.gd<>uid://brthmdy0bvgqo::::res://asset/font/metal lord ot.otf
 aspects.gd::GDScript::-1::1691258065::0::1::::<>HBoxContainer<>::
 aspects.tscn::PackedScene::440767523461281644::1691254666::0::1::::<><>::res://scene/4/aspects.gd<>uid://n8lbkw2xhavn
-card.gd::GDScript::-1::1691417991::0::1::::<>MarginContainer<>::
-card.tscn::PackedScene::7687283424039726025::1691498824::0::1::::<><>::res://scene/4/card.gd<>uid://bosmmlrvh3vk1::::res://scene/4/icon.tscn<>uid://gjrm2qndq7xo::::res://scene/4/aspects.tscn
+card.gd::GDScript::-1::1691580180::0::1::::<>MarginContainer<>::
+card.tscn::PackedScene::7687283424039726025::1691583096::0::1::::<><>::res://scene/4/card.gd<>uid://bosmmlrvh3vk1::::res://scene/4/icon.tscn<>uid://gjrm2qndq7xo::::res://scene/4/aspects.tscn
 granule.gd::GDScript::-1::1691493522::0::1::::<>MarginContainer<>::
-granule.tscn::PackedScene::4637319651352464534::1691498824::0::1::::<><>::uid://beh7inkt4rf38::::res://asset/font/rimouski sb.otf<>res://scene/4/granule.gd
+granule.tscn::PackedScene::4637319651352464534::1691583096::0::1::::<><>::uid://beh7inkt4rf38::::res://asset/font/rimouski sb.otf<>res://scene/4/granule.gd
 icon.gd::GDScript::-1::1691498790::0::1::::<>MarginContainer<>::
-icon.tscn::PackedScene::3406973932621836786::1691498824::0::1::::<><>::uid://beh7inkt4rf38::::res://asset/font/rimouski sb.otf<>res://scene/4/icon.gd
-library.gd::GDScript::-1::1691497361::0::1::::<>MarginContainer<>::
-library.tscn::PackedScene::7384160757033353479::1691498824::0::1::::<><>::res://scene/4/library.gd
+icon.tscn::PackedScene::3406973932621836786::1691583096::0::1::::<><>::uid://beh7inkt4rf38::::res://asset/font/rimouski sb.otf<>res://scene/4/icon.gd
+library.gd::GDScript::-1::1691582401::0::1::::<>MarginContainer<>::
+library.tscn::PackedScene::7384160757033353479::1691583096::0::1::::<><>::res://scene/4/library.gd
 protocol.gd::GDScript::-1::1691493385::0::1::::<>MarginContainer<>::
-protocol.tscn::PackedScene::8533424265618463898::1691498823::0::1::::<><>::res://scene/4/protocol.gd<>uid://brthmdy0bvgqo::::res://asset/font/metal lord ot.otf
-::res://script/::1691498647
-Global.gd::GDScript::-1::1691498647::0::1::::<>Node<>::
+protocol.tscn::PackedScene::8533424265618463898::1691583096::0::1::::<><>::res://scene/4/protocol.gd<>uid://brthmdy0bvgqo::::res://asset/font/metal lord ot.otf
+::res://script/::1691580180
+Global.gd::GDScript::-1::1691580180::0::1::::<>Node<>::
